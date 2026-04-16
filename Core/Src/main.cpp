@@ -106,8 +106,8 @@ int main(void)
   // Initialize CRSF with the UART handle
   crsf.init(&hlpuart1);
 
-  // Start DMA reception
-  HAL_UARTEx_ReceiveToIdle_DMA(&hlpuart1, crsf.rxData, sizeof(crsf.rxData));
+  // // Start DMA reception
+  // HAL_UARTEx_ReceiveToIdle_DMA(&hlpuart1, crsf.rxData, sizeof(crsf.rxData));
 
   /* USER CODE END 2 */
 
@@ -126,7 +126,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   { 
-    HAL_Delay(1);
+    HAL_Delay(20);
+    // crsf.printLatestPacket();
+    crsf.parseLatestPacket();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
